@@ -4,7 +4,7 @@ Frontend SaaS concept for an AI tattoo generator, with a public landing and an a
 
 ## Demo
 
-[View live demo](AQUI_URL_DEMO)
+[View live demo](https://trazoai.vercel.app/)
 
 ## Screenshots
 
@@ -15,10 +15,6 @@ Frontend SaaS concept for an AI tattoo generator, with a public landing and an a
 ### Dashboard
 
 ![TrazoAI dashboard](docs/screenshots/dashboard-generate-desktop.png)
-
-### Result or gallery
-
-![TrazoAI result or gallery](docs/screenshots/result-or-gallery-desktop.png)
 
 ## Stack
 
