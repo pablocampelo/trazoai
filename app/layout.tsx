@@ -1,57 +1,62 @@
-import type React from "react"
-import "../styles/globals.css"
-import { Inter } from "next/font/google"
-import type { Metadata } from "next"
-import { ThemeProvider } from "@/components/theme-provider"
-import { ConditionalSiteHeader } from "@/components/conditional-site-header"
-import { ConditionalSiteFooter } from "@/components/conditional-site-footer"
+import { ConditionalSiteFooter } from '@/components/conditional-site-footer';
+import { ConditionalSiteHeader } from '@/components/conditional-site-header';
+import { ThemeProvider } from '@/components/theme-provider';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import type React from 'react';
+import '../styles/globals.css';
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.trazoai.com/"),
-  alternates: {
-    canonical: "/",
+  metadataBase: new URL('https://www.trazoai.com/'),
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
   },
-  title: "Trazo AI - Diseña tu tatuaje perfecto",
+  alternates: {
+    canonical: '/',
+  },
+  title: 'Trazo AI - Diseña tu tatuaje perfecto',
   description:
-    "Utiliza el poder de la IA para crear diseños de tatuajes únicos y personalizados. De la idea a la tinta, te ayudamos a visualizar tu próximo tatuaje.",
+    'Utiliza el poder de la IA para crear diseños de tatuajes únicos y personalizados. De la idea a la tinta, te ayudamos a visualizar tu próximo tatuaje.',
   openGraph: {
-    title: "Trazo AI - Diseña tu tatuaje perfecto",
+    title: 'Trazo AI - Diseña tu tatuaje perfecto',
     description:
-      "Utiliza el poder de la IA para crear diseños de tatuajes únicos y personalizados. De la idea a la tinta, te ayudamos a visualizar tu próximo tatuaje.",
-    url: "/",
-    siteName: "Trazo AI",
+      'Utiliza el poder de la IA para crear diseños de tatuajes únicos y personalizados. De la idea a la tinta, te ayudamos a visualizar tu próximo tatuaje.',
+    url: '/',
+    siteName: 'Trazo AI',
     images: [
       {
-        url: "logo.png",
+        url: 'logo.png',
         width: 1200,
         height: 630,
-        alt: "Trazo AI",
+        alt: 'Trazo AI',
       },
     ],
-    locale: "es_ES",
-    type: "website",
+    locale: 'es_ES',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Trazo AI - Diseña tu tatuaje perfecto",
+    card: 'summary_large_image',
+    title: 'Trazo AI - Diseña tu tatuaje perfecto',
     description:
-      "Utiliza el poder de la IA para crear diseños de tatuajes únicos y personalizados. De la idea a la tinta, te ayudamos a visualizar tu próximo tatuaje.",
-    images: ["logo.png"],
+      'Utiliza el poder de la IA para crear diseños de tatuajes únicos y personalizados. De la idea a la tinta, te ayudamos a visualizar tu próximo tatuaje.',
+    images: ['logo.png'],
   },
-  generator: "v0.dev",
-}
+  generator: 'v0.dev',
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <div className="flex min-h-screen flex-col">
             <ConditionalSiteHeader />
             <main className="flex-1">{children}</main>
@@ -60,5 +65,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
